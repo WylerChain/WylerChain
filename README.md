@@ -1,4 +1,6 @@
-# Substrate Node Template
+<h1 align="center">
+    <strong>Fiction Node</strong>
+</h1>
 
 A fresh [Substrate](https://substrate.io/) node, ready for hacking :rocket:
 
