@@ -1,4 +1,4 @@
-use fiction_runtime::{AccountId, RuntimeGenesisConfig, Signature, WASM_BINARY};
+use wyler_runtime::{AccountId, RuntimeGenesisConfig, Signature, WASM_BINARY};
 use sc_service::ChainType;
 use sp_consensus_aura::sr25519::AuthorityId as AuraId;
 use sp_consensus_grandpa::AuthorityId as GrandpaId;
@@ -34,6 +34,14 @@ pub fn authority_keys_from_seed(s: &str) -> (AuraId, GrandpaId) {
 }
 
 pub fn development_config() -> Result<ChainSpec, String> {
+	// let mut properties = Map::new();
+	// properties.insert("tokenSymbol".into(), default_runtime::TOKEN_SYMBOL.into());
+	// properties.insert("tokenDecimals".into(), default_runtime::DECIMALS.into());
+	// properties.insert(
+	// 	"ss58Format".into(),
+	// 	default_runtime::SS58Prefix::get().into(),
+	// );
+
 	Ok(ChainSpec::builder(
 		WASM_BINARY.ok_or_else(|| "Development wasm not available".to_string())?,
 		None,

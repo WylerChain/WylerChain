@@ -15,17 +15,17 @@ RUN apt-get update && \
 	useradd -m -u 1000 -U -s /bin/sh -d /polkadot polkadot && \
 	mkdir -p /data /polkadot/.local/share && \
 	chown -R polkadot:polkadot /data && \
-	ln -s /data /polkadot/.local/share/fiction
+	ln -s /data /polkadot/.local/share/wyler
 
 USER polkadot
 
 # copy the compiled binary to the container
-COPY --chown=polkadot:polkadot --chmod=774 fiction /usr/bin/fiction
+COPY --chown=polkadot:polkadot --chmod=774 wyler /usr/bin/wyler
 
 # check if executable works in this container
-RUN /usr/bin/fiction --version
+RUN /usr/bin/wyler --version
 
 # ws_port
 EXPOSE 9930 9333 9944 30333 30334
 
-CMD ["/usr/bin/fiction"]
+CMD ["/usr/bin/wyler"]
